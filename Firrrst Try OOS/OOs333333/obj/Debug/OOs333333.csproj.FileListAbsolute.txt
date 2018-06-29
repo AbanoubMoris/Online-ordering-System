@@ -18,4 +18,3 @@ C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.Form1.resou
 C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.Form2.resources
 C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.Properties.Resources.resources
 C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.csproj.GenerateResource.Cache
-C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.UserControl1.resources
