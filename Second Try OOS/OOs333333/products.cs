@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OOs333333
 {
@@ -22,6 +23,11 @@ namespace OOs333333
             get { return label3; }
             set { label3 = value; }
             }
+        public Image pic
+        {
+            get { return pictureBox1.Image; }
+            set { pictureBox1.Image = value; }
+        }
 
       public products (string LblName) : this()
         {
@@ -43,9 +49,16 @@ namespace OOs333333
             {
                 pictureBox1.Image = Image.FromFile(Of.FileName);
             }
-
-
             Of.Dispose();
-        }
+            if (!Directory.Exists("ProImg"))
+            {
+                Directory.CreateDirectory("ProImg");
+            }
+            //int fCount = Directory.GetFiles("ProImg","*", SearchOption.AllDirectories).Length;
+
+
+            pictureBox1.Image.Save("ProImg/" +textBox1.Text +".jpg");
+
+       }
     }
 }

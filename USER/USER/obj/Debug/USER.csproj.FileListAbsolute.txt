@@ -1,0 +1,23 @@
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\bin\Debug\USER.exe.config
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\bin\Debug\USER.exe
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\bin\Debug\USER.pdb
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.Form1.resources
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.Properties.Resources.resources
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.exe
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.pdb
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.Form2.resources
+C:\Users\DELL\Desktop\SFMLtesting\USER\USER\obj\Debug\USER.Form3.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\bin\Debug\USER.exe.config
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.exe
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.pdb
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.csprojResolveAssemblyReference.cache
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.Form1.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.Form2.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.Form3.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.Form4.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.Properties.Resources.resources
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\obj\Debug\USER.csproj.GenerateResource.Cache
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\bin\Debug\USER.exe
+C:\Users\lap shop\Documents\GitHub\Online-ordering-System\USER\USER\bin\Debug\USER.pdb

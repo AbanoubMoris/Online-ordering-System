@@ -19,6 +19,11 @@ namespace OOs333333
             InitializeComponent();
         }
 
+        public Image Pic
+        {
+            get { return pictureBox1.Image; }
+            set { pictureBox1.Image = value; }
+        }
 
         public Cate (string Category) : this()
         {
@@ -27,20 +32,12 @@ namespace OOs333333
        
         private void Cate_Load(object sender, EventArgs e)
         {
+           
 
         }
 
         private void pictureBox1_MouseClick_1(object sender, MouseEventArgs e)
         {
-            OpenFileDialog Of = new OpenFileDialog();
-            Of.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (Of.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image = Image.FromFile(Of.FileName);
-            }
-
-
-            Of.Dispose();
 
         }
         private void pictureBox1_MouseEnter(object sender, EventArgs e)

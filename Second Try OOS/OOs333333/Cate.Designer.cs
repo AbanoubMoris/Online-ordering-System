@@ -47,7 +47,8 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(17, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 29);
@@ -57,16 +58,19 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(226, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 110);
             this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(14, 27);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
