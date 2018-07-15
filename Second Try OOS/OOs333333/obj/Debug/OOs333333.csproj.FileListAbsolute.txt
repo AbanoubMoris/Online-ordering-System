@@ -25,6 +25,7 @@ C:\Users\lap shop\Desktop\Fist Try OOS\OOs333333\obj\Debug\OOs333333.NewCategory
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\bin\Debug\OOs333333.exe.config
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\bin\Debug\OOs333333.exe
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\bin\Debug\OOs333333.pdb
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.csprojResolveAssemblyReference.cache
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Cate.resources
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Form1.resources
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Form2.resources
@@ -35,3 +36,8 @@ C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Propertie
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.csproj.GenerateResource.Cache
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.exe
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.pdb
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.AdminLogin.resources
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Choice.resources
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.RegisterationForm.resources
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.user.resources
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.UserLogin.resources

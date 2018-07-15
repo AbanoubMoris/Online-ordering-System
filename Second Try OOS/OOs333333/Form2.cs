@@ -32,10 +32,10 @@ namespace OOs333333
         {
 
             InitializeComponent();
-
             
 
-            panel1.AutoScroll = true;
+
+          //  panel1.AutoScroll = true;
 
             InitializeComponent ee = new InitializeComponent(panel1);
 
@@ -88,14 +88,13 @@ namespace OOs333333
                 ///////////////////////////////////////////
 
                 //*****************Category images ***************//
-
-                if (Data.MyPic.Count > i && Data.MyPic[i] == Data.Category[i])
-                {
-                    //////////////////////////////
-                    Category[i].Pic = Data.CategoryImg1[i];
-
-                }
-
+             
+                    if (Data.MyPic.Count > i && Data.MyPic[i] == Data.Category[i])
+                    {
+                        //////////////////////////////
+                        Category[i].Pic = Data.CategoryImg1[i];
+                    }
+             
                 ///////////////////////////////////////////
                 if (m != Data.CategoryIDOfPr.Count)
                     while (Data.CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
@@ -176,8 +175,12 @@ namespace OOs333333
         }
 
 
+     //   public bool ChoosedImg = false;
+
         private void button1_Click(object sender, EventArgs e)
         {
+       //     ChoosedImg = true;
+
             if (textBox1.Text == "Name")
             {
                 MessageBox.Show("Please Enter Name of Category", "Error");
@@ -215,7 +218,7 @@ namespace OOs333333
                         }
                         else
                         {
-                            Category[i].Location = new Point(20, i * 140);
+                            Category[i].Location = new Point(150, i * 140);
                         }
 
                         // Category[i].Text = textBox1.Text;
@@ -264,7 +267,6 @@ namespace OOs333333
                             }
                             Category[i].Pic.Save("img/" + Data.Category[i] + ".jpg");
                         }
-
                         for (int T = 0; T < Data.Category.Count; T++)
                         {
                             var captured_T = T;  // to get the index of clicked Button
@@ -349,8 +351,10 @@ namespace OOs333333
 
         private void label3_Click_1(object sender, EventArgs e)
         {
-
+       //     if (!ChoosedImg)
             this.Hide();
+        //    else
+        //        MessageBox.Show("Please choose a Image first");
         }
 
 

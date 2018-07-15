@@ -23,7 +23,10 @@ namespace OOs333333
         public List<string> ProductPrice = new List<string>();
         public List<int> CategoryIDOfPr = new List<int>();
         public List<int> ProductID = new List<int>();
-         
+
+      
+
+
         public List<string> Category
         {
             get{ return bTN_Name; }
@@ -52,7 +55,7 @@ namespace OOs333333
         {
              foreach (string Pic in Directory.GetFiles("img"))
             {
-                if (Pic == "img\\Thumbs.db") break; //end of pics
+                if (Pic == "img\\Thumbs.db") continue; //end of pics
                 CategoryImg1.Add(Image.FromFile(Pic));
                 string[] Token = Pic.Split('\\', '.');
                 CateImg.Add(Token[1]);
@@ -62,7 +65,7 @@ namespace OOs333333
         {
             foreach (string Pic in Directory.GetFiles("ProImg"))
             {
-                if (Pic == "ProImg\\Thumbs.db") break; //end of pics
+                if (Pic == "ProImg\\Thumbs.db") continue ; //end of pics
                 ProductImg.Add(Image.FromFile(Pic));
                 string[] Token = Pic.Split('\\', '.');
                 ProImg.Add(Token[1]);

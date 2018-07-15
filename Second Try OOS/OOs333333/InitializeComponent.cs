@@ -76,13 +76,15 @@ namespace OOs333333
                 ///////////////////////////////////////////
 
                 //*****************Category images ***************//
-
-                if (Data.MyPic.Count > i && Data.MyPic[i] == Data.Category[i])
+                for (int j = 0; j < Data.Category.Count; j++)
                 {
-                    //////////////////////////////
-                    Category[i].Pic = Data.CategoryImg1[i];
-
+                    if (Data.MyPic.Count > i && Data.MyPic[j] == Data.Category[i])
+                    {
+                        //////////////////////////////
+                        Category[i].Pic = Data.CategoryImg1[j];
+                    }
                 }
+                
 
                 ///////////////////////////////////////////
                 if (m != Data.CategoryIDOfPr.Count)
@@ -212,8 +214,8 @@ namespace OOs333333
                         panel1.Controls.Add(Category[i]);
 
 
-                        //******************************** Save image into file************************************************
 
+                        //******************************** Save image into file************************************************
 
 
                         //******************************** Add Form of products for each category ************************

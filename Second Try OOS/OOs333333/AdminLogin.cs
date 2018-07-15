@@ -8,31 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace USER
+namespace OOs333333
 {
-    public partial class Form4 : Form
+    public partial class AdminLogin : Form
     {
-        public Form4()
+        public AdminLogin()
         {
             InitializeComponent();
-            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             if (textBox1.Text.ToString() == "Admin" && textBox2.Text.ToString() == "Admin")
             {
-
+                Form1 adminForm = new Form1();
+                this.Hide();
+                adminForm.Show();
             }
             else
             {
                 MessageBox.Show("Error,Incorrect Password!");
             }
         }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
