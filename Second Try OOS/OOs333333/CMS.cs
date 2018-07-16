@@ -11,26 +11,24 @@ namespace OOs333333
 {
     class CMS
     {
-        private List<string> bTN_Name = new List<string>();
-        private List<string> CategoryID = new List<string>();
-        private List<Image> CategoryImg = new List<Image>();
-        private List<string> CateImg = new List<string>();
+       public List<string> Category      = new List<string>();
+       public List<string> CategoryID   = new List<string>();
+       public List<Image>  CategoryImg   = new List<Image>();
+       public List<string> CateImg      = new List<string>();
 
-        public List<Image> ProductImg = new List<Image>();
-        public List<string> ProImg = new List<string>();
+        public List<Image>   ProductImg   = new List<Image>();
+        public List<string> ProImg        = new List<string>();
 
-        public List<string> ProductName = new List<string>();
-        public List<string> ProductPrice = new List<string>();
-        public List<int> CategoryIDOfPr = new List<int>();
-        public List<int> ProductID = new List<int>();
-
-      
+        public List<string> ProductName   = new List<string>();
+        public List<string> ProductPrice   = new List<string>();
+        public List<int>    CategoryIDOfPr = new List<int>();
+        public List<int>    ProductID      = new List<int>();
 
 
-        public List<string> Category
+         public List<string> Category1
         {
-            get{ return bTN_Name; }
-            set { bTN_Name = value;}
+            get{ return Category; }
+            set { Category = value;}
         }
 
         public List<string> CategoryID1
@@ -51,6 +49,24 @@ namespace OOs333333
             set{ CateImg = value;}
         }
 
+       public CMS(List<string> bTN_Name, List<string> CategoryID, List<Image> CategoryImg, List<string> CateImg, List<Image> ProductImg,List<string> ProImg , List<string> ProductName,List<string> ProductPrice, List<int> CategoryIDOfPr,List<int> ProductID)
+        {
+           this.Category      = bTN_Name;
+            this.CategoryID    =CategoryID   ;
+           this.CategoryImg   =CategoryImg   ;
+           this.CateImg       =CateImg      ;
+ 
+           this. ProductImg   = ProductImg   ;
+           this.ProImg        =ProImg        ;
+      
+           this.ProductName   =ProductName   ;
+           this.ProductPrice  =ProductPrice  ;
+           this.CategoryIDOfPr=CategoryIDOfPr;
+           this.ProductID     =ProductID     ;
+
+
+
+        }
         public void LoadCategoryImg()
         {
              foreach (string Pic in Directory.GetFiles("img"))

@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(775, 494);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 492);
+            this.Controls.Add(this.panel1);
             this.Name = "user";
             this.Text = "user";
             this.Load += new System.EventHandler(this.user_Load);
@@ -43,5 +53,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

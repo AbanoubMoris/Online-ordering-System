@@ -14,16 +14,35 @@ namespace OOs333333
 {
     public partial class Form1 : Form
     {
-        List<Cate> Category = new List<Cate>();
-        List<Form> FrmProduct = new List<Form>();
-        List<Panel> ProductContainer = new List<Panel>();
+        CMS Data;
+       public List<Cate> Category = new List<Cate>();
+       public List<Form> FrmProduct = new List<Form>();
+       public List<Panel> ProductContainer = new List<Panel>();
+      
+       public List<Button> AddProductBtn = new List<Button>();
+       public List<TextBox> ProName = new List<TextBox>();
+       public List<TextBox> ProPrice = new List<TextBox>();
 
-        List<Button> AddProductBtn = new List<Button>();
-        List<TextBox> ProName = new List<TextBox>();
-        List<TextBox> ProPrice = new List<TextBox>();
 
 
-        CMS Data = new CMS();
+
+        List<string> bTN_Name = new List<string>();
+        List<string> CategoryID = new List<string>();
+        List<Image> CategoryImg = new List<Image>();
+        List<string> CateImg = new List<string>();
+
+         List<Image> ProductImg = new List<Image>();
+         List<string> ProImg = new List<string>();
+
+         List<string> ProductName = new List<string>();
+         List<string> ProductPrice = new List<string>();
+         List<int> CategoryIDOfPr = new List<int>();
+         List<int> ProductID = new List<int>();
+
+
+
+
+
 
         int i = 0;
         int v = 1;
@@ -35,6 +54,8 @@ namespace OOs333333
         public Form1()
         {
             InitializeComponent();
+
+            Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
 
             Data.ReadData();
             Data.ReadProducts();
