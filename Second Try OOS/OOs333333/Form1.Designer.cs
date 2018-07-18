@@ -42,9 +42,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,19 +52,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dragControl2 = new drawing.DragControl();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -80,7 +77,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuText;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(16, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(233, 35);
@@ -101,7 +98,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuText;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(16, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(233, 35);
@@ -122,7 +119,7 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuText;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.LightGray;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Location = new System.Drawing.Point(16, 180);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(233, 35);
@@ -229,9 +226,6 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(20)))));
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel9.Controls.Add(this.panel4);
-            this.panel9.Controls.Add(this.pictureBox8);
-            this.panel9.Controls.Add(this.label3);
-            this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.button3);
             this.panel9.Controls.Add(this.pictureBox4);
             this.panel9.Controls.Add(this.button2);
@@ -241,6 +235,7 @@
             this.panel9.Controls.Add(this.pictureBox2);
             this.panel9.Controls.Add(this.pictureBox6);
             this.panel9.Controls.Add(this.pictureBox7);
+            this.panel9.Controls.Add(this.pictureBox9);
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(248, 578);
@@ -254,39 +249,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(134, 293);
             this.panel4.TabIndex = 0;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(3, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 47);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Online Ordering\r\n";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(45, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 43);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "System";
             // 
             // pictureBox6
             // 
@@ -305,9 +267,9 @@
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(15, 104);
+            this.pictureBox7.Location = new System.Drawing.Point(15, 120);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(232, 84);
+            this.pictureBox7.Size = new System.Drawing.Size(232, 48);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -395,18 +357,25 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(252, 2);
+            this.panel3.Location = new System.Drawing.Point(251, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(725, 91);
+            this.panel3.Size = new System.Drawing.Size(731, 93);
             this.panel3.TabIndex = 0;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dragControl2
+            // pictureBox9
             // 
-            this.dragControl2.SelectControl = this.panel9;
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(245, 163);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 21;
+            this.pictureBox9.TabStop = false;
             // 
             // Form1
             // 
@@ -428,8 +397,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -437,6 +404,7 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,14 +422,10 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel9;
-        private drawing.DragControl dragControl2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -469,6 +433,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
 

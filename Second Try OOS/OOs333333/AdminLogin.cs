@@ -35,6 +35,26 @@ namespace OOs333333
                 MessageBox.Show("Error,Incorrect Password!");
             }
         }
-        
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "UserName") textBox1.Text = "";
+        }
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") textBox1.Text = "UserName";
+        }
+
+        private void textBox2_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Password") textBox2.Text = "";
+            else textBox2.PasswordChar = '*';
+        }
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "") textBox2.Text = "Password";
+        }
+
+
+
     }
 }

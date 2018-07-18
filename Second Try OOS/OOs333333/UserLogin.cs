@@ -68,6 +68,23 @@ namespace OOs333333
             }
 
         }
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

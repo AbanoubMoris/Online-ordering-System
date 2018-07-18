@@ -65,29 +65,14 @@
       <DependentUpon>Choice.cs</DependentUpon>
     </Compile>
     <Compile Include="CMS.cs" />
-    <Compile Include="DragControl.cs">
+    <Compile Include="Drag.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DragControl.Designer.cs">
-      <DependentUpon>DragControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NameAndPrice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="NameAndPrice.Designer.cs">
-      <DependentUpon>NameAndPrice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewCategory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="NewCategory.Designer.cs">
-      <DependentUpon>NewCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="products.cs">
       <SubType>UserControl</SubType>
@@ -127,12 +112,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NameAndPrice.resx">
-      <DependentUpon>NameAndPrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewCategory.resx">
-      <DependentUpon>NewCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="products.resx">
       <DependentUpon>products.cs</DependentUpon>

@@ -61,5 +61,19 @@ namespace OOs333333
             sr.Close();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.Red;
+
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.Transparent;
+        }
     }
 }

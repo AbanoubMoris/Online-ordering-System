@@ -116,7 +116,45 @@ namespace OOs333333
             sr.Close();
         }
 
-        
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox1.Text=="Name")textBox1.Text = "";
+        }
+        private void textBox2_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Email") textBox2.Text = "";
+        }
+        private void textBox3_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "Address") textBox3.Text = "";
+        }
+        private void textBox4_MouseEnter(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "Password") textBox4.Text = "";
+            else textBox4.PasswordChar = '*';
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") textBox1.Text = "Name";
+        }
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "") textBox2.Text = "Email";
+        }
+        private void textBox3_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "") textBox3.Text = "Address";
+        }
+        private void textBox4_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "") textBox4.Text = "Password";
+        }
     }
 }
 
