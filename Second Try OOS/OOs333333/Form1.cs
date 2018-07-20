@@ -41,6 +41,13 @@ namespace OOs333333
 
 
 
+        List<string> UserName = new List<string>();
+        List<string> ProNam = new List<string>();
+        List<int> Price = new List<int>();
+        List<int> Quantity = new List<int>();
+
+        OnlineOrders GetOrders;
+
 
 
 
@@ -54,6 +61,8 @@ namespace OOs333333
         public Form1()
         {
             InitializeComponent();
+
+            GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
 
             Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
 
@@ -189,12 +198,15 @@ namespace OOs333333
 
                     products New = new products();
                     New.Location = new Point(20, W * New.Height);
-                    New.Controls[1].Text = ProName[captured_j].Text;
-                    New.Controls[0].Text = ProPrice[captured_j].Text + "$";
+                    New.Controls["textBox1"].Text = ProName[captured_j].Text;
+                    New.Controls["textBox2"].Text = ProPrice[captured_j].Text + "$";
+
+
                     ProductContainer[captured_j].Controls.Add(New);
 
                     StreamWriter SW = new StreamWriter("Products.txt", true);
-                    SW.WriteLine((captured_j + 1000) + "," + W + "," + New.Controls[1].Text + "," + New.Controls[0].Text + "$");
+                    SW.WriteLine((captured_j + 1000) + "," + W + "," + New.Controls["textBox1"].Text + "," + New.Controls["textBox2"].Text);
+                    
 
                     SW.Dispose();
 
@@ -232,6 +244,20 @@ namespace OOs333333
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e) // online order button
+        {
+            button1.BackColor = Color.Transparent;
+            button2.BackColor = Color.Transparent;
+            button3.BackColor = Color.FromArgb(44, 146, 234);
+
+
+
+
+
+
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -288,15 +314,6 @@ namespace OOs333333
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Transparent;
-            button2.BackColor = Color.Transparent;
-            button3.BackColor = Color.FromArgb(44, 146, 234);
-
-
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -360,24 +377,6 @@ namespace OOs333333
                                int y = Category[i - 1].Location.Y + Category[i - 1].Height;
                             //int y = panel5.Controls.Count/2 * 155;
                             Category[i].Location = new Point(150, y);
-
-                                  
-                        //        if ((i-1) % 2 == 1) { x1 = 280; }
-                        //        else x1 = 0;
-                        //
-                        //
-                        //        if ((i-1) == 2) y2 = 155;
-                        //    if ((i - 1) % 2 == 1 && (i - 1) != 1)
-                        //    {
-                        //        y2 = 155 * y / 2;
-                        //        v++;
-                        //    }
-                        //    else
-                        //        y2 = (panel5.Controls.Count / 2 * 155)+155;
-                        //
-                        //
-                        //        Category[i].Location = new Point(x1, y2);
-
 
 
 
@@ -469,13 +468,15 @@ namespace OOs333333
 
                                 products New = new products();
                                 New.Location = new Point(20, W * New.Height);
-                                New.Controls[1].Text = ProName[captured_j].Text;
-                                New.Controls[0].Text = ProPrice[captured_j].Text + "$";
-                                ProductContainer[captured_j].Controls.Add(New);
+                                New.Controls["textBox1"].Text = ProName[captured_j].Text;
+                                New.Controls["textBox2"].Text = ProPrice[captured_j].Text + "$";
 
                                 StreamWriter SW = new StreamWriter("Products.txt", true);
-                                SW.WriteLine((captured_j + 1000) + "," + W + "," + New.Controls[1].Text + "," + New.Controls[0].Text);
+                                SW.WriteLine((captured_j + 1000) + "," + W + "," + ProName[captured_j].Text + "," + New.Controls["textBox2"].Text);
                                 SW.Dispose();
+
+                                ProductContainer[captured_j].Controls.Add(New);
+
                             };
                         }
                         for (int j = 0; j < Data.Category.Count; j++)

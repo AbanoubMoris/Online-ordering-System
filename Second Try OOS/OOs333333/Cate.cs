@@ -40,15 +40,9 @@ namespace OOs333333
         {
 
         }
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.Orange;
-        }
+    
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.Gray;
-        }
+       
 
      }
 }

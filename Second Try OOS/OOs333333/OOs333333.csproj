@@ -74,6 +74,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnlineOrders.cs" />
+    <Compile Include="OnlineOrderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnlineOrderUserControl.Designer.cs">
+      <DependentUpon>OnlineOrderUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="products.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineOrderUserControl.resx">
+      <DependentUpon>OnlineOrderUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="products.resx">
       <DependentUpon>products.cs</DependentUpon>
@@ -155,6 +165,7 @@
     <Content Include="Resources\cf9b0125ff98a3dd33f944f9fefa83b2.png" />
     <None Include="Resources\cf9b0125ff98a3dd33f944f9fefa83b21.png" />
     <None Include="Resources\if_user-admin_34293.png" />
+    <None Include="Resources\if_star_285661.png" />
     <Content Include="Resources\if___Right_1904671.png" />
   </ItemGroup>
   <ItemGroup>

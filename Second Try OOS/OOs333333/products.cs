@@ -19,27 +19,19 @@ namespace OOs333333
             //panel2.AutoScroll = true;
         }
 
-    public Label LBLID {
-            get { return label3; }
-            set { label3 = value; }
-            }
+        string Line="";
+
         public Image pic
         {
             get { return pictureBox1.Image; }
             set { pictureBox1.Image = value; }
         }
 
-      public products (string LblName) : this()
-        {
-         //  label2.Text = LblName;
-        }
-     //   public products(string ProductName , string Price , Form Product) : this()
-     //   {
-     //       label2.Text = ProductName;
-     //       label1.Text = Price;
-     //       Product.Controls.Add(this);
-     //       
-     //   }
+      //  public products(string UserName) : this()
+      //  {
+      //      Line = UserName + "," + textBox1.Text + "," + textBox2.Text + "," + numericUpDown1.Value ;
+      //
+      //  }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -60,5 +52,15 @@ namespace OOs333333
             pictureBox1.Image.Save("ProImg/" +textBox1.Text +".jpg");
 
        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StreamWriter sr = new StreamWriter("Orders.txt", true);
+            Line = label1.Text + "," + textBox1.Text + "," + textBox2.Text + "," + numericUpDown1.Value ;
+
+            sr.WriteLine(Line);
+            sr.Dispose();
+        }
     }
 }

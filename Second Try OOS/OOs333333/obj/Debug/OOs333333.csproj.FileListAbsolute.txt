@@ -37,4 +37,4 @@ C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.Choice.re
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.RegisterationForm.resources
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.user.resources
 C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.UserLogin.resources
-C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.csprojResolveAssemblyReference.cache
+C:\Users\lap shop\Desktop\Second Try OOS\OOs333333\obj\Debug\OOs333333.OnlineOrderUserControl.resources

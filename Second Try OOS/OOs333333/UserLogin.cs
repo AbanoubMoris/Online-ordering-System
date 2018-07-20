@@ -32,11 +32,13 @@ namespace OOs333333
         }
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+   
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
+
             checkDataIfValid();
         }
-
         
 
         Boolean Valid = false;
@@ -44,9 +46,10 @@ namespace OOs333333
 
         public void checkDataIfValid()
         {
-            for (int i = 0; i < userNAME.Count; i++)
+            int i = 0;
+            for (i = 0; i < userNAME.Count; i++)
             {
-                if (userNAME[i] == textBox1.Text && userPASS[i] == textBox2.Text)
+                if (userNAME[i] == textBox4.Text && userPASS[i] == textBox3.Text)
                 {
                     MessageBox.Show("Welcome " + userNAME[i] + "!");
                     Valid = true;
@@ -56,13 +59,15 @@ namespace OOs333333
                 {
                     Valid = false;
                 }
+                i++;
             }
             if (!Valid)
             {
                 MessageBox.Show("Wrong username or password! , Please try again.");
             }else
             {
-                user User = new user();
+                user User = new user(i);
+                User.Text = userNAME[i];
                 User.Show();
                 this.Hide();
             }
@@ -72,6 +77,7 @@ namespace OOs333333
         {
 
         }
+
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
 

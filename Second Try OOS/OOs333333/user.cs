@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ namespace OOs333333
     public partial class user : Form
     {
         CMS Data;
+
+        List< products> Pro = new List<products>();
+
         public List<Cate> Category = new List<Cate>();
         public List<Form> FrmProduct = new List<Form>();
         public List<Panel> ProductContainer = new List<Panel>();
@@ -43,10 +47,35 @@ namespace OOs333333
         int y2 = 0;
 
 
+        //كود مؤقت
+        public List<String> username = new List<string>();
+        List<String> password = new List<string>();
+        List<String> userAddress = new List<string>();
+        List<String> userEmail = new List<string>();
+        StreamReader sr = new StreamReader("UserData.txt");
 
-
-        public user()
+        public void readDataFromFile()
         {
+            while (!sr.EndOfStream)
+            {
+                username.Add(sr.ReadLine());
+                userEmail.Add(sr.ReadLine());
+                userAddress.Add(sr.ReadLine());
+                password.Add(sr.ReadLine());
+
+            }
+            sr.Close();
+        }
+
+
+        private int userNum;
+       
+
+        public user(int i)
+        {
+            readDataFromFile();
+            this.userNum = i;
+
             InitializeComponent();
             Data = new CMS(bTN_Name, CategoryID, CategoryImg, CateImg, ProductImg, ProImg, ProductName, ProductPrice, CategoryIDOfPr, ProductID);
             ayzeft();
@@ -139,17 +168,21 @@ namespace OOs333333
                 if (m != Data.CategoryIDOfPr.Count)
                     while (Data.CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
                     {
-                        products Pro = new products();
-                        Pro.Controls[1].Text = Data.ProductName[m];
-                        Pro.Controls[0].Text = Data.ProductPrice[m];
+                        Pro.Add(new products());
+
+                        Pro[m].Controls["textBox1"].Text = Data.ProductName[m];
+                        Pro[m].Controls["textBox2"].Text = Data.ProductPrice[m];
+                        Pro[m].Controls["label1"].Text = username[userNum];
+
+                        Pro[m].Controls["Panel2"].Visible = true;
 
 
                         //  Pro.pic = Data.ProductImg[m];  //product image **********
 
                         int W = ProductContainer[i].Controls.Count;
-                        Pro.Location = new Point(20, W * Pro.Height);
+                        Pro[m].Location = new Point(20, W * Pro[m].Height);
 
-                        ProductContainer[i].Controls.Add(Pro);
+                        ProductContainer[i].Controls.Add(Pro[m]);
                         m++;
                         if (m == Data.ProductName.Count) { break; }
                     }
@@ -157,18 +190,13 @@ namespace OOs333333
             }
 
 
-            for (int j = 0; j < Data.Category.Count; j++)
+            for (int j = 0; j < Data.Category.Count; j++) // if click the button of show products
             {
-                var captured_j = j;  // to get the index of clicked Button
+                var captured_j = j;  
                 Category[j].Controls[1].Click += (s, ea) => FrmProduct[captured_j].ShowDialog();
 
             }
 
-          
-
-            //File.Delete("img//" + Data.Category[0] +".jpg");
-
-            
 
         }
     }
