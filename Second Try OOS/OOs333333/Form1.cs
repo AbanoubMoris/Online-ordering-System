@@ -25,7 +25,6 @@ namespace OOs333333
 
 
 
-
         List<string> bTN_Name = new List<string>();
         List<string> CategoryID = new List<string>();
         List<Image> CategoryImg = new List<Image>();
@@ -41,10 +40,8 @@ namespace OOs333333
 
 
 
-        List<string> UserName = new List<string>();
-        List<string> ProNam = new List<string>();
-        List<int> Price = new List<int>();
-        List<int> Quantity = new List<int>();
+        
+        
 
         OnlineOrders GetOrders;
 
@@ -62,7 +59,7 @@ namespace OOs333333
         {
             InitializeComponent();
 
-            GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
+
 
             Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
 
@@ -86,6 +83,9 @@ namespace OOs333333
             //Form2 CMS = new Form2();
             //   this.Hide();
             //CMS.ShowDialog();
+            ShowUser.Visible = false;
+            OnlineOrderPanel.Visible = false;
+
             panel6.Visible = true;
             panel5.AutoScroll = true;
             panel5.Visible = true;
@@ -165,8 +165,8 @@ namespace OOs333333
                     while (Data.CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
                     {
                         products Pro = new products();
-                        Pro.Controls[1].Text = Data.ProductName[m];
-                        Pro.Controls[0].Text = Data.ProductPrice[m];
+                        Pro.Controls["textBox1"].Text = Data.ProductName[m];
+                        Pro.Controls["textBox2"].Text = Data.ProductPrice[m];
 
 
                         //  Pro.pic = Data.ProductImg[m];  //product image **********
@@ -247,17 +247,98 @@ namespace OOs333333
 
         private void button3_Click(object sender, EventArgs e) // online order button
         {
+            List<OrderUserControl> Order = new List<OrderUserControl>();
+
+
+            List<string> UserName = new List<string>();
+            List<string> ProNam = new List<string>();
+            List<int> Price = new List<int>();
+            List<int> Quantity = new List<int>();
+
+            GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
+
+
+
+            panel5.Visible = false;
+            ShowUser.Visible = false;
+            OnlineOrderPanel.Visible = true;
+            OnlineOrderPanel.AutoScroll = true;
+
             button1.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
             button3.BackColor = Color.FromArgb(44, 146, 234);
 
+            for (int j=0;j < UserName.Count; j++)
+            {
+                //****************Intialize OrderUserControl *****************************
+                Order.Add(new OrderUserControl());
+                Order[j].Controls["CustName"].Text = UserName[j];
 
+                //UserName, ProNam, Price, Quantity
+
+                Order[j].Controls["Product"].Text = ProNam[j];
+
+                Order[j].Controls["Quantity"].Text = Quantity[j].ToString();
+                Order[j].Controls["Price"].Text = (Price[j] * Convert.ToUInt32(Order[j].Controls["Quantity"].Text)).ToString(); //total price
+
+                Order[j].Location = new Point(60, OnlineOrderPanel.Controls.Count * Order[j].Height);
+
+                OnlineOrderPanel.Controls.Add(Order[j]); 
+
+            } 
 
 
 
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<string> UserName = new List<string>();
+            List<string> ProductName = new List<string>();
+            List<string> Price = new List<string>();
+            List<string> Quantity = new List<string>();
+            List<string> status = new List<string>();
+
+            List<OrderUserControl> UserControl = new List<OrderUserControl>();
+
+            UserOrders ShowOrders = new UserOrders(UserName, ProductName, Price, Quantity, status);
+
+
+            panel5.Visible = false;
+            OnlineOrderPanel.Visible = false;
+
+            ShowUser.Visible = true;
+            ShowUser.AutoScroll = true;
+
+             for (int j = 0; j < UserName.Count; j++)
+            {
+                //****************Intialize OrderUserControl *****************************
+                UserControl.Add(new OrderUserControl(status[j]));
+                //UserControl.Add(new OrderUserControl());
+
+                //    UserControl[j].Controls["CustName"].Text = UserName[j];
+                //
+                //    //UserName, ProNam, Price, Quantity
+                //
+                //    UserControl[j].Controls["Product"].Text = ProductName[j];
+                //    UserControl[j].Controls["Quantity"].Text = Quantity[j].ToString();
+                //    UserControl[j].Controls["Price"].Text =  //total price
+                UserControl[j].Location = new Point(60, 300);
+
+                ShowUser.Controls.Add(UserControl[j]);
+ 
+            }
+
+
+
+            button1.BackColor = Color.Transparent;
+            button3.BackColor = Color.Transparent;
+            button2.BackColor = Color.FromArgb(44, 146, 234);
+
+           
+
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -315,13 +396,6 @@ namespace OOs333333
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Transparent;
-            button3.BackColor = Color.Transparent;
-            button2.BackColor = Color.FromArgb(44, 146, 234);
-
-        }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {

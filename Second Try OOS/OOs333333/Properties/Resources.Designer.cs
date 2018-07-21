@@ -73,6 +73,16 @@ namespace OOs333333.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _31602_bright_light_png {
+            get {
+                object obj = ResourceManager.GetObject("31602-bright-light-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c8c1f181909d93e701367ec3b47f447e {
             get {
                 object obj = ResourceManager.GetObject("c8c1f181909d93e701367ec3b47f447e", resourceCulture);

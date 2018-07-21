@@ -18,12 +18,12 @@ namespace OOs333333
 
        public OnlineOrders(List<string> UserName, List<string> ProductName, List<int> Price, List<int> Quantity)
         {
-            ReadOrders();
-
             this.UserName    = UserName  ;
             this.ProductName =ProductName;
             this.Price       =Price      ;
             this.Quantity    = Quantity  ;
+            ReadOrders();
+
         }
 
         public void SplitOrderLine()

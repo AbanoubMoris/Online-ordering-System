@@ -75,11 +75,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="OnlineOrders.cs" />
-    <Compile Include="OnlineOrderUserControl.cs">
+    <Compile Include="OrderUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OnlineOrderUserControl.Designer.cs">
-      <DependentUpon>OnlineOrderUserControl.cs</DependentUpon>
+    <Compile Include="OrderUserControl.Designer.cs">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="products.cs">
       <SubType>UserControl</SubType>
@@ -108,6 +108,7 @@
     <Compile Include="UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserOrders.cs" />
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,8 +121,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OnlineOrderUserControl.resx">
-      <DependentUpon>OnlineOrderUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="OrderUserControl.resx">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="products.resx">
       <DependentUpon>products.cs</DependentUpon>
@@ -162,6 +163,7 @@
     <Content Include="Resources\22.png" />
     <None Include="Resources\خط-فاصل.png" />
     <None Include="Resources\c8c1f181909d93e701367ec3b47f447e.png" />
+    <None Include="Resources\31602-bright-light-png.jpg" />
     <Content Include="Resources\cf9b0125ff98a3dd33f944f9fefa83b2.png" />
     <None Include="Resources\cf9b0125ff98a3dd33f944f9fefa83b21.png" />
     <None Include="Resources\if_user-admin_34293.png" />

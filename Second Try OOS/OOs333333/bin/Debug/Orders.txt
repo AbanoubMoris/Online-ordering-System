@@ -1,2 +1,5 @@
 1,Samsung,156$,5
 ta,Samsung,156$,1
+ta,Samsung,156$,1
+ta,sAnm,156$,7
+ta,Samsung,156$,3

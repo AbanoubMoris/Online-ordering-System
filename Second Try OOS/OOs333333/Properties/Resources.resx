@@ -130,13 +130,16 @@
   <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_star_285661" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_star_285661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c8c1f181909d93e701367ec3b47f447e" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\c8c1f181909d93e701367ec3b47f447e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if___Right_1904671" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if___Right_1904671.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_star_285661" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_star_285661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="31602-bright-light-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\31602-bright-light-png.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
