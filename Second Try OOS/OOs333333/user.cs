@@ -68,7 +68,7 @@ namespace OOs333333
         }
 
 
-        private int userNum;
+        public int userNum;
        
 
         public user(int i)
@@ -77,6 +77,7 @@ namespace OOs333333
             this.userNum = i;
 
             InitializeComponent();
+
             Data = new CMS(bTN_Name, CategoryID, CategoryImg, CateImg, ProductImg, ProImg, ProductName, ProductPrice, CategoryIDOfPr, ProductID);
             ayzeft();
         }
@@ -94,18 +95,9 @@ namespace OOs333333
 
         public void ayzeft()
         {
-            Data.ReadData();
-            Data.ReadProducts();
-            Data.PutProductToEachCategory();
-            Data.LoadCategoryImg();
-            Data.LoadProductImg();
-
-
+           
             panel1.AutoScroll = true;
             panel1.Visible = true;
-
-
-
 
             int m = 0;
 

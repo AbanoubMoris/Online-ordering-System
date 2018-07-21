@@ -31,7 +31,6 @@ namespace OOs333333
         List<String> password = new List<string>();
         List<String> userAddress = new List<string>();
         List<String> userEmail = new List<string>();
-        StreamReader sr = new StreamReader("UserData.txt");
         private void button2_Click(object sender, EventArgs e)
         {
             readDataFromFile();
@@ -54,6 +53,7 @@ namespace OOs333333
 
         public void readDataFromFile()
         {
+        StreamReader sr = new StreamReader("UserData.txt");
             while (!sr.EndOfStream)
             {
                 username.Add(sr.ReadLine());

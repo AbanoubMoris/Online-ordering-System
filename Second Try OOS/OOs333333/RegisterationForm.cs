@@ -20,8 +20,7 @@ namespace OOs333333
         List<String> userEmail = new List<string>();
         List<String> userPassword = new List<string>();
         List<String> checkUserName = new List<string>();
-        StreamReader sr = new StreamReader("UserData.txt");
-        int c = 0;
+                int c = 0;
         Boolean isUsernameValid = true;
         Boolean isPasswordValid = false;
         UserLogin login;
@@ -29,8 +28,8 @@ namespace OOs333333
         public RegisterationForm()
         {
             InitializeComponent();
-            readDataFromFile();
             login = new UserLogin(userName, userPassword,userAddress ,userEmail);
+            readDataFromFile();
         }
 
         private void RegisterationForm_Load(object sender, EventArgs e)
@@ -99,6 +98,8 @@ namespace OOs333333
 
         public void readDataFromFile()
         {
+            StreamReader sr = new StreamReader("UserData.txt");
+
             while (!sr.EndOfStream)
             {
                 userName.Add(sr.ReadLine());
