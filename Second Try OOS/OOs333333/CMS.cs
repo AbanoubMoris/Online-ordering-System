@@ -64,6 +64,11 @@ namespace OOs333333
            this.CategoryIDOfPr=CategoryIDOfPr;
            this.ProductID     =ProductID     ;
 
+            ReadData();
+            ReadProducts();
+            PutProductToEachCategory();
+            LoadCategoryImg();
+            LoadProductImg();
 
 
         }

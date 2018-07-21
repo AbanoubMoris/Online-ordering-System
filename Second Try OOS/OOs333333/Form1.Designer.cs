@@ -47,14 +47,14 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.OnlineOrderPanel = new System.Windows.Forms.Panel();
+            this.ShowUser = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.NewCategoryPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ShowUser = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,8 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel2.SuspendLayout();
-            this.OnlineOrderPanel.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.NewCategoryPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -292,9 +291,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.ShowUser);
             this.panel2.Controls.Add(this.OnlineOrderPanel);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.NewCategoryPanel);
             this.panel2.Location = new System.Drawing.Point(252, 97);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(725, 477);
@@ -305,12 +305,21 @@
             // 
             this.OnlineOrderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
             this.OnlineOrderPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OnlineOrderPanel.Controls.Add(this.ShowUser);
             this.OnlineOrderPanel.Location = new System.Drawing.Point(47, 10);
             this.OnlineOrderPanel.Name = "OnlineOrderPanel";
             this.OnlineOrderPanel.Size = new System.Drawing.Size(614, 328);
             this.OnlineOrderPanel.TabIndex = 13;
             this.OnlineOrderPanel.Visible = false;
+            // 
+            // ShowUser
+            // 
+            this.ShowUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
+            this.ShowUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ShowUser.Location = new System.Drawing.Point(33, 2);
+            this.ShowUser.Name = "ShowUser";
+            this.ShowUser.Size = new System.Drawing.Size(648, 336);
+            this.ShowUser.TabIndex = 14;
+            this.ShowUser.Visible = false;
             // 
             // panel5
             // 
@@ -323,17 +332,17 @@
             this.panel5.Visible = false;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // panel6
+            // NewCategoryPanel
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.button4);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(206, 341);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(273, 125);
-            this.panel6.TabIndex = 13;
-            this.panel6.Visible = false;
+            this.NewCategoryPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.NewCategoryPanel.Controls.Add(this.textBox1);
+            this.NewCategoryPanel.Controls.Add(this.button4);
+            this.NewCategoryPanel.Controls.Add(this.label5);
+            this.NewCategoryPanel.Location = new System.Drawing.Point(206, 341);
+            this.NewCategoryPanel.Name = "NewCategoryPanel";
+            this.NewCategoryPanel.Size = new System.Drawing.Size(273, 125);
+            this.NewCategoryPanel.TabIndex = 13;
+            this.NewCategoryPanel.Visible = false;
             // 
             // textBox1
             // 
@@ -392,16 +401,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // ShowUser
-            // 
-            this.ShowUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
-            this.ShowUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ShowUser.Location = new System.Drawing.Point(0, 0);
-            this.ShowUser.Name = "ShowUser";
-            this.ShowUser.Size = new System.Drawing.Size(614, 328);
-            this.ShowUser.TabIndex = 14;
-            this.ShowUser.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,9 +425,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.OnlineOrderPanel.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.NewCategoryPanel.ResumeLayout(false);
+            this.NewCategoryPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -455,7 +453,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel NewCategoryPanel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;

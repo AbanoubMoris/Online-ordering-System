@@ -17,10 +17,18 @@ namespace OOs333333
         {
             InitializeComponent();
         }
-        public OrderUserControl(string Status) : this()
+        public OrderUserControl(string ProductName,string Status,string Quantity,string Price,string UserName,Panel pnl) : this()
         {
             StatusLbl.Text = Status;
+            this.Product.Text = ProductName;
+            this.Quantity.Text = Quantity;
+            this.Price.Text = Price;
+            this.CustName.Text = UserName;
+
             panel1.Visible = true;
+            panel2.Visible = true;
+            this.Location = new Point(60, pnl.Controls.Count * this.Height);
+            pnl.Controls.Add(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

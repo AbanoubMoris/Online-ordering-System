@@ -14,36 +14,10 @@ namespace OOs333333
 {
     public partial class Form1 : Form
     {
-        CMS Data;
-       public List<Cate> Category = new List<Cate>();
-       public List<Form> FrmProduct = new List<Form>();
-       public List<Panel> ProductContainer = new List<Panel>();
-      
-       public List<Button> AddProductBtn = new List<Button>();
-       public List<TextBox> ProName = new List<TextBox>();
-       public List<TextBox> ProPrice = new List<TextBox>();
-
-
-
-        List<string> bTN_Name = new List<string>();
-        List<string> CategoryID = new List<string>();
-        List<Image> CategoryImg = new List<Image>();
-        List<string> CateImg = new List<string>();
-
-         List<Image> ProductImg = new List<Image>();
-         List<string> ProImg = new List<string>();
-
-         List<string> ProductName = new List<string>();
-         List<string> ProductPrice = new List<string>();
-         List<int> CategoryIDOfPr = new List<int>();
-         List<int> ProductID = new List<int>();
-
-
-
         
-        
+    
 
-        OnlineOrders GetOrders;
+
 
 
 
@@ -53,7 +27,13 @@ namespace OOs333333
         int x1=0;
         int y2=0;
 
+        List<Cate> Category = new List<Cate>();
+        List<Form> FrmProduct = new List<Form>();
+        List<Panel> ProductContainer = new List<Panel>();
 
+        List<Button> AddProductBtn = new List<Button>();
+        List<TextBox> ProName = new List<TextBox>();
+        List<TextBox> ProPrice = new List<TextBox>();
 
         public Form1()
         {
@@ -61,13 +41,6 @@ namespace OOs333333
 
 
 
-            Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
-
-            Data.ReadData();
-            Data.ReadProducts();
-            Data.PutProductToEachCategory();
-            Data.LoadCategoryImg();
-            Data.LoadProductImg();
           
 
 
@@ -76,6 +49,36 @@ namespace OOs333333
 
         private void button1_Click(object sender, EventArgs e)
         {
+        
+        
+        
+
+        
+        
+              
+
+
+        List<string> bTN_Name = new List<string>();
+            List<string> CategoryID = new List<string>();
+            List<Image> CategoryImg = new List<Image>();
+            List<string> CateImg = new List<string>();
+
+            List<Image> ProductImg = new List<Image>();
+            List<string> ProImg = new List<string>();
+
+            List<string> ProductName = new List<string>();
+            List<string> ProductPrice = new List<string>();
+            List<int> CategoryIDOfPr = new List<int>();
+            List<int> ProductID = new List<int>();
+
+            CMS Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
+
+         //   Data.ReadData();
+         //   Data.ReadProducts();
+         //   Data.PutProductToEachCategory();
+         //   Data.LoadCategoryImg();
+         //   Data.LoadProductImg();
+
             button2.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
             button1.BackColor = Color.FromArgb(44, 146, 234);
@@ -86,9 +89,14 @@ namespace OOs333333
             ShowUser.Visible = false;
             OnlineOrderPanel.Visible = false;
 
-            panel6.Visible = true;
+            NewCategoryPanel.Visible = true;
             panel5.AutoScroll = true;
             panel5.Visible = true;
+
+            if (panel5.Visible == true)
+            {
+                NewCategoryPanel.Visible = true;
+            }
 
 
 
@@ -255,7 +263,7 @@ namespace OOs333333
             List<int> Price = new List<int>();
             List<int> Quantity = new List<int>();
 
-            GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
+            OnlineOrders GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
 
 
 
@@ -311,30 +319,19 @@ namespace OOs333333
             ShowUser.Visible = true;
             ShowUser.AutoScroll = true;
 
-             for (int j = 0; j < UserName.Count; j++)
-            {
-                //****************Intialize OrderUserControl *****************************
-                UserControl.Add(new OrderUserControl(status[j]));
-                //UserControl.Add(new OrderUserControl());
-
-                //    UserControl[j].Controls["CustName"].Text = UserName[j];
-                //
-                //    //UserName, ProNam, Price, Quantity
-                //
-                //    UserControl[j].Controls["Product"].Text = ProductName[j];
-                //    UserControl[j].Controls["Quantity"].Text = Quantity[j].ToString();
-                //    UserControl[j].Controls["Price"].Text =  //total price
-                UserControl[j].Location = new Point(60, 300);
-
-                ShowUser.Controls.Add(UserControl[j]);
- 
-            }
-
-
-
             button1.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
             button2.BackColor = Color.FromArgb(44, 146, 234);
+
+            //    UserControl[0].Location = new Point(60, 300);
+           //     ShowUser.Controls.Add(UserControl[0]);
+
+             for (int j = 0; j < UserName.Count; j++)
+            {
+                UserControl.Add(new OrderUserControl(ProductName[j],status[j],Quantity[j],Price[j],UserName[j],ShowUser));
+            }
+
+
 
            
 
@@ -412,11 +409,30 @@ namespace OOs333333
 
         }
 
-                          
-                           
-                           
+
+
+
         private void button4_Click(object sender, EventArgs e)
         {
+
+            
+
+            List<string> bTN_Name = new List<string>();
+            List<string> CategoryID = new List<string>();
+            List<Image> CategoryImg = new List<Image>();
+            List<string> CateImg = new List<string>();
+
+            List<Image> ProductImg = new List<Image>();
+            List<string> ProImg = new List<string>();
+
+            List<string> ProductName = new List<string>();
+            List<string> ProductPrice = new List<string>();
+            List<int> CategoryIDOfPr = new List<int>();
+            List<int> ProductID = new List<int>();
+
+
+            CMS Data = new CMS(bTN_Name, CategoryID, CategoryImg, CateImg, ProductImg, ProImg, ProductName, ProductPrice, CategoryIDOfPr, ProductID);
+
             if (textBox1.Text == "Name")
             {
                 MessageBox.Show("Please Enter Name of Category", "Error");
@@ -448,13 +464,13 @@ namespace OOs333333
                         if (i != 0)
                         {
                             int x = Category[i - 1].Location.X;
-                               int y = Category[i - 1].Location.Y + Category[i - 1].Height;
+                            int y = Category[i - 1].Location.Y + Category[i - 1].Height;
                             //int y = panel5.Controls.Count/2 * 155;
                             Category[i].Location = new Point(150, y);
 
 
 
-                            }
+                        }
                         else
                         {
                             Category[i].Location = new Point(150, i * 140);
