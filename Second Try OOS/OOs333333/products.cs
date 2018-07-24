@@ -13,11 +13,30 @@ namespace OOs333333
 {
     public partial class products : UserControl
     {
+        private List<Image> ProductImg = new List<Image>();
+        private List<string> ProImge = new List<string>();
+
+
         public products()
         {
             InitializeComponent();
-            //panel2.AutoScroll = true;
+            ProImg x = new ProImg(ProductImg,ProImge);
         }
+
+        public products(string Name,string Price) : this()
+        {
+            this.textBox1.Text = Name;
+            this.textBox2.Text = Price;
+
+            for (int i = 0; i < ProImge.Count; i++) {
+                if (this.textBox1.Text == ProImge[i])
+                {
+                    pictureBox1.Image = ProductImg[i];
+                }
+
+                    }
+ 
+               }
 
         string Line="";
 
@@ -26,12 +45,6 @@ namespace OOs333333
             get { return pictureBox1.Image; }
             set { pictureBox1.Image = value; }
         }
-
-      //  public products(string UserName) : this()
-      //  {
-      //      Line = UserName + "," + textBox1.Text + "," + textBox2.Text + "," + numericUpDown1.Value ;
-      //
-      //  }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -46,9 +59,7 @@ namespace OOs333333
             {
                 Directory.CreateDirectory("ProImg");
             }
-            //int fCount = Directory.GetFiles("ProImg","*", SearchOption.AllDirectories).Length;
-
-
+            
             pictureBox1.Image.Save("ProImg/" +textBox1.Text +".jpg");
 
        }
@@ -56,8 +67,10 @@ namespace OOs333333
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
             StreamWriter sr = new StreamWriter("Orders.txt", true);
-            Line = label1.Text + "," + textBox1.Text + "," + textBox2.Text + "," + numericUpDown1.Value ;
+            Line = label1.Text + "," + textBox1.Text + "," + textBox2.Text + "," + numericUpDown1.Value +"," + "Pending" ;
 
             sr.WriteLine(Line);
             sr.Dispose();

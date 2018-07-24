@@ -28,6 +28,8 @@ namespace OOs333333
         int y2=0;
 
         List<Cate> Category = new List<Cate>();
+        List<products> Pro = new List<products>();
+
         List<Form> FrmProduct = new List<Form>();
         List<Panel> ProductContainer = new List<Panel>();
 
@@ -73,19 +75,10 @@ namespace OOs333333
 
             CMS Data = new CMS( bTN_Name,  CategoryID, CategoryImg, CateImg, ProductImg, ProImg,  ProductName, ProductPrice, CategoryIDOfPr,ProductID);
 
-         //   Data.ReadData();
-         //   Data.ReadProducts();
-         //   Data.PutProductToEachCategory();
-         //   Data.LoadCategoryImg();
-         //   Data.LoadProductImg();
-
             button2.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
             button1.BackColor = Color.FromArgb(44, 146, 234);
 
-            //Form2 CMS = new Form2();
-            //   this.Hide();
-            //CMS.ShowDialog();
             ShowUser.Visible = false;
             OnlineOrderPanel.Visible = false;
 
@@ -103,9 +96,9 @@ namespace OOs333333
 
             int m = 0;
 
-            for (i = 0; i < Data.Category.Count; i++)
+            for (i = 0; i < bTN_Name.Count; i++)
             {
-                Category.Add(new Cate(Data.Category[i]));
+                Category.Add(new Cate(bTN_Name[i]));
 
                 if (i % 2 == 1) { x1 = 280; }
                 else x1 = 0;
@@ -119,15 +112,13 @@ namespace OOs333333
 
 
                 Category[i].Location = new Point(x1, y2);
-            //    x2 = x1;
-            //    y2 = y1;
 
                 panel5.Controls.Add(Category[i]);
 
                 //******************************** Add Form of products for each category ************************
 
                 FrmProduct.Add(new Form());
-                FrmProduct[i].Text = Data.Category[i];
+                FrmProduct[i].Text = bTN_Name[i];
                 FrmProduct[i].StartPosition = FormStartPosition.CenterScreen;
                 FrmProduct[i].Width = 400;
                 FrmProduct[i].Height = 550;
@@ -158,46 +149,57 @@ namespace OOs333333
                 ///////////////////////////////////////////
 
                 //*****************Category images ***************
-                for (int j = 0; j <= Data.Category.Count; j++)
+                for (int j = 0; j <= bTN_Name.Count; j++)
                 {
-                    if (Data.MyPic.Count > i && Data.MyPic[j] == Data.Category[i])
+                    if (Data.MyPic.Count > i && Data.MyPic[j] == bTN_Name[i])
                     {
                         //////////////////////////////
-                        Category[i].Pic = Data.CategoryImg1[j];
+                        Category[i].Pic = CategoryImg[j];
                         break;
                     }
                 }
+                //*************Product Images**********************
+
+                       
 
                 ///////////////////////////////////////////
-                if (m != Data.CategoryIDOfPr.Count)
-                    while (Data.CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
+                if (m != CategoryIDOfPr.Count)
+                    while (CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
                     {
-                        products Pro = new products();
-                        Pro.Controls["textBox1"].Text = Data.ProductName[m];
-                        Pro.Controls["textBox2"].Text = Data.ProductPrice[m];
+                        Pro.Add(new products(ProductName[m],ProductPrice[m]));
+                      //  Pro[m].Controls["textBox1"].Text = ProductName[m];
+                      //  Pro[m].Controls["textBox2"].Text = ProductPrice[m];
 
 
                         //  Pro.pic = Data.ProductImg[m];  //product image **********
 
                         int W = ProductContainer[i].Controls.Count;
-                        Pro.Location = new Point(20, W * Pro.Height);
+                        Pro[m].Location = new Point(20, W * Pro[m].Height);
 
-                        ProductContainer[i].Controls.Add(Pro);
+                        ProductContainer[i].Controls.Add(Pro[m]);
                         m++;
-                        if (m == Data.ProductName.Count) { break; }
+                        if (m == ProductName.Count) { break; }
                     }
 
+                
+              //  for (int j = 0; j < ProductImg.Count; j++)
+              //  {
+              //      if ( ProImg[j] == ProductName[i])
+              //      {
+              //          Pro[j].pic = ProductImg[j];   
+              //      }
+              //  }
             }
 
 
-            for (int j = 0; j < Data.Category.Count; j++)
+            for (int j = 0; j < bTN_Name.Count; j++)
             {
                 var captured_j = j;  // to get the index of clicked Button
                 Category[j].Controls[1].Click += (s, ea) => FrmProduct[captured_j].ShowDialog();
 
             }
 
-            for (int j = 0; j < Data.Category.Count; j++)
+            for (int j = 0; j < bTN_Name.Count; j++)
             {
                 var captured_j = j;  // to get the index of clicked Button
                 AddProductBtn[j].Click += (s2, eao) =>
@@ -223,7 +225,7 @@ namespace OOs333333
 
             //File.Delete("img//" + Data.Category[0] +".jpg");
 
-            for (int T = 0; T < Data.Category.Count; T++)
+            for (int T = 0; T < bTN_Name.Count; T++)
             {
 
                 var captured_T = T;  // to get the index of clicked Button
@@ -243,7 +245,7 @@ namespace OOs333333
                         Directory.CreateDirectory("img");
                     }
 
-                    Category[captured_T].Pic.Save("img/" + Data.Category[captured_T] + ".jpg");
+                    Category[captured_T].Pic.Save("img/" + bTN_Name[captured_T] + ".jpg");
 
                     // MessageBox.Show("Data has been succefully saved ", textBox1.Text);
 
@@ -253,8 +255,47 @@ namespace OOs333333
 
         }
 
+        List<string> Line = new List<string>();
+        public void ReadOrders()
+        {
+            int i = 0;
+
+            StreamReader sr = new StreamReader("Orders.txt");
+            while (!sr.EndOfStream)
+            {
+                Line.Add(sr.ReadLine());
+                string[] Token = Line[i].Split(',');
+
+                if (Token[4] == "Delivered" || Token[4] == "In-Progress")
+                {
+                    Line.RemoveAt(i);
+                }
+                else
+                    i++;
+            }
+
+            sr.Dispose();
+        }
+
+        public void WriteOrders()
+        {
+            ReadOrders();
+            StreamWriter sw = new StreamWriter("Orders.txt");
+            for (int i = 0; i < Line.Count; i++)
+            {
+                sw.WriteLine(Line[i]);
+            }
+            sw.Dispose();
+        }
+
+
         private void button3_Click(object sender, EventArgs e) // online order button
         {
+
+
+
+
+
             List<OrderUserControl> Order = new List<OrderUserControl>();
 
 
@@ -262,8 +303,9 @@ namespace OOs333333
             List<string> ProNam = new List<string>();
             List<int> Price = new List<int>();
             List<int> Quantity = new List<int>();
+            List<string> status = new List<string>();
 
-            OnlineOrders GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity);
+            OnlineOrders GetOrders = new OnlineOrders(UserName, ProNam, Price, Quantity ,status );
 
 
 
@@ -279,7 +321,9 @@ namespace OOs333333
             for (int j=0;j < UserName.Count; j++)
             {
                 //****************Intialize OrderUserControl *****************************
-                Order.Add(new OrderUserControl());
+                Order.Add(new OrderUserControl(ProNam[j]));
+           //     if (status[j] == "Deleverd" ) continue;
+
                 Order[j].Controls["CustName"].Text = UserName[j];
 
                 //UserName, ProNam, Price, Quantity
@@ -293,8 +337,13 @@ namespace OOs333333
 
                 OnlineOrderPanel.Controls.Add(Order[j]); 
 
-            } 
+            }
 
+            //  StreamReader sr = new StreamReader("AdminOrders.txt");
+            // string Line
+
+            // sr.Dispose(); 
+            WriteOrders();
 
 
 
@@ -328,7 +377,7 @@ namespace OOs333333
 
              for (int j = 0; j < UserName.Count; j++)
             {
-                UserControl.Add(new OrderUserControl(ProductName[j],status[j],Quantity[j],Price[j],UserName[j],ShowUser));
+                UserControl.Add(new OrderUserControl(UserName[j], ProductName[j], Price[j], Quantity[j], status[j],ShowUser));
             }
 
 
@@ -443,9 +492,9 @@ namespace OOs333333
                 bool AddedBefore = false;
                 while (true)
                 {
-                    for (int j = 0; j < Data.Category.Count; j++)
+                    for (int j = 0; j < bTN_Name.Count; j++)
                     {
-                        if (textBox1.Text == Data.Category[j])
+                        if (textBox1.Text == bTN_Name[j])
                         {
                             MessageBox.Show("This Category Has Been Added Before", "Error");
                             AddedBefore = true;
@@ -458,8 +507,8 @@ namespace OOs333333
                     }
                     else
                     {
-                        Data.Category.Add(textBox1.Text);
-                        Category.Add(new Cate(Data.Category[i]));
+                        bTN_Name.Add(textBox1.Text);////////////////
+                        Category.Add(new Cate(bTN_Name[i]));
 
                         if (i != 0)
                         {
@@ -487,7 +536,7 @@ namespace OOs333333
                         //******************************** Add Form of products for each category ************************
 
                         FrmProduct.Add(new Form());
-                        FrmProduct[i].Text = Data.Category[i];
+                        FrmProduct[i].Text = bTN_Name[i];
                         FrmProduct[i].StartPosition = FormStartPosition.CenterScreen;
                         FrmProduct[i].Width = 400;
                         FrmProduct[i].Height = 550;
@@ -520,9 +569,9 @@ namespace OOs333333
                             {
                                 Directory.CreateDirectory("img");
                             }
-                            Category[i].Pic.Save("img/" + Data.Category[i] + ".jpg");
+                            Category[i].Pic.Save("img/" + bTN_Name[i] + ".jpg");
                         }
-                        for (int T = 0; T < Data.Category.Count; T++)
+                        for (int T = 0; T < bTN_Name.Count; T++)
                         {
                             var captured_T = T;  // to get the index of clicked Button
                             Category[T].Controls["pictureBox1"].Click += (a, s) =>
@@ -540,14 +589,14 @@ namespace OOs333333
                                 {
                                     Directory.CreateDirectory("img");
                                 }
-                                Category[captured_T].Pic.Save("img/" + Data.Category[captured_T] + ".jpg");
+                                Category[captured_T].Pic.Save("img/" + bTN_Name[captured_T] + ".jpg");
                                 // MessageBox.Show("Data has been succefully saved ", textBox1.Text);
 
                             };
 
 
                         }
-                        for (int j = 0; j < Data.Category.Count; j++)
+                        for (int j = 0; j < bTN_Name.Count; j++)
                         {
                             var captured_j = j;  // to get the index of clicked Button
                             AddProductBtn[j].Click += (s2, eao) =>
@@ -556,10 +605,10 @@ namespace OOs333333
 
                                 //ProductUC.Add(new products());
 
-                                products New = new products();
+                                products New = new products(ProName[captured_j].Text, ProPrice[captured_j].Text);
                                 New.Location = new Point(20, W * New.Height);
-                                New.Controls["textBox1"].Text = ProName[captured_j].Text;
-                                New.Controls["textBox2"].Text = ProPrice[captured_j].Text + "$";
+                              //  New.Controls["textBox1"].Text = ProName[captured_j].Text;
+                              //  New.Controls["textBox2"].Text = ProPrice[captured_j].Text + "$";
 
                                 StreamWriter SW = new StreamWriter("Products.txt", true);
                                 SW.WriteLine((captured_j + 1000) + "," + W + "," + ProName[captured_j].Text + "," + New.Controls["textBox2"].Text);
@@ -569,11 +618,17 @@ namespace OOs333333
 
                             };
                         }
-                        for (int j = 0; j < Data.Category.Count; j++)
+                        for (int j = 0; j < bTN_Name.Count; j++)
                         {
                             var captured_j = j;  // to get the index of clicked Button
                             Category[j].Controls[1].Click += (s, ea) => FrmProduct[captured_j].ShowDialog();  //if click on the button or first user control
                         }
+                         StreamWriter sr = new StreamWriter("CategoryName.txt",true);
+                         
+                             string Line = "," + (i + 1000).ToString();
+                             sr.WriteLine(bTN_Name[i] + Line);
+                       
+                         sr.Dispose();
                         i++;
                         MessageBox.Show("Data Has Been Saved Successfully", "Thank U :)");
                         break;
@@ -581,7 +636,6 @@ namespace OOs333333
                     M++;
                 }
             }
-            Data.WriteData();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)

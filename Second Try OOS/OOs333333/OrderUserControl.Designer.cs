@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderUserControl));
             this.Price = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Quantity = new System.Windows.Forms.Label();
             this.CustName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Time = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.StatusLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,19 +102,19 @@
             this.CustName.TabIndex = 35;
             this.CustName.Text = "Amr El.";
             // 
-            // textBox1
+            // Time
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(317, 76);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(75, 16);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.Text = "30";
+            this.Time.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Time.Location = new System.Drawing.Point(317, 76);
+            this.Time.Margin = new System.Windows.Forms.Padding(2);
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Size = new System.Drawing.Size(75, 16);
+            this.Time.TabIndex = 34;
+            this.Time.Text = "5";
             // 
             // label7
             // 
@@ -233,7 +235,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.StatusLbl);
-            this.panel1.Location = new System.Drawing.Point(136, 11);
+            this.panel1.Location = new System.Drawing.Point(131, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(263, 48);
             this.panel1.TabIndex = 41;
@@ -258,6 +260,11 @@
             this.panel2.TabIndex = 42;
             this.panel2.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // OrderUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +277,7 @@
             this.Controls.Add(this.Quantity);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CustName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Time);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -297,7 +304,7 @@
         private System.Windows.Forms.Label Quantity;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label CustName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Time;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -310,5 +317,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label StatusLbl;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

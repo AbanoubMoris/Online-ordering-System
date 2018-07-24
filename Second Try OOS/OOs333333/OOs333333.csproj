@@ -88,6 +88,7 @@
       <DependentUpon>products.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProImg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterationForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +161,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\111.png" />
     <Content Include="Resources\22.png" />
     <None Include="Resources\خط-فاصل.png" />
     <None Include="Resources\c8c1f181909d93e701367ec3b47f447e.png" />

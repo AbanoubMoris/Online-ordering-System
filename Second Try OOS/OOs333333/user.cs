@@ -33,7 +33,7 @@ namespace OOs333333
         List<Image> ProductImg = new List<Image>();
         List<string> ProImg = new List<string>();
 
-        List<string> ProductName = new List<string>();
+        List<string> ProdName = new List<string>();
         List<string> ProductPrice = new List<string>();
         List<int> CategoryIDOfPr = new List<int>();
         List<int> ProductID = new List<int>();
@@ -78,7 +78,7 @@ namespace OOs333333
 
             InitializeComponent();
 
-            Data = new CMS(bTN_Name, CategoryID, CategoryImg, CateImg, ProductImg, ProImg, ProductName, ProductPrice, CategoryIDOfPr, ProductID);
+            Data = new CMS(bTN_Name, CategoryID, CategoryImg, CateImg, ProductImg, ProImg, ProdName, ProductPrice, CategoryIDOfPr, ProductID);
             ayzeft();
         }
 
@@ -101,9 +101,9 @@ namespace OOs333333
 
             int m = 0;
 
-            for (i = 0; i < Data.Category.Count; i++)
+            for (i = 0; i < bTN_Name.Count; i++)
             {
-                Category.Add(new Cate(Data.Category[i]));
+                Category.Add(new Cate(bTN_Name[i]));
 
                 if (i % 2 == 1) { x1 = 280; }
                 else x1 = 0;
@@ -126,7 +126,7 @@ namespace OOs333333
                 //******************************** Add Form of products for each category ************************
 
                 FrmProduct.Add(new Form());
-                FrmProduct[i].Text = Data.Category[i];
+                FrmProduct[i].Text = bTN_Name[i];
                 FrmProduct[i].StartPosition = FormStartPosition.CenterScreen;
                 FrmProduct[i].Width = 400;
                 FrmProduct[i].Height = 550;
@@ -146,9 +146,9 @@ namespace OOs333333
                 ///////////////////////////////////////////
 
                 //*****************Category images ***************
-                for (int j = 0; j <= Data.Category.Count; j++)
+                for (int j = 0; j <= bTN_Name.Count; j++)
                 {
-                    if (Data.MyPic.Count > i && Data.MyPic[j] == Data.Category[i])
+                    if (Data.MyPic.Count > i && Data.MyPic[j] == bTN_Name[i])
                     {
                         //////////////////////////////
                         Category[i].Pic = Data.CategoryImg1[j];
@@ -157,17 +157,14 @@ namespace OOs333333
                 }
 
                 ///////////////////////////////////////////
-                if (m != Data.CategoryIDOfPr.Count)
-                    while (Data.CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
+                if (m != CategoryIDOfPr.Count)
+                    while (CategoryIDOfPr[m] == int.Parse(Data.CategoryID1[i]))
                     {
-                        Pro.Add(new products());
-
-                        Pro[m].Controls["textBox1"].Text = Data.ProductName[m];
-                        Pro[m].Controls["textBox2"].Text = Data.ProductPrice[m];
-                        Pro[m].Controls["label1"].Text = username[userNum];
+                        Pro.Add(new products(ProdName[m], ProductPrice[m]));
+                        //  Pro[m].Controls["textBox1"].Text = ProductName[m];
+                        //  Pro[m].Controls["textBox2"].Text = ProductPrice[m];
 
                         Pro[m].Controls["Panel2"].Visible = true;
-
 
                         //  Pro.pic = Data.ProductImg[m];  //product image **********
 
@@ -176,13 +173,12 @@ namespace OOs333333
 
                         ProductContainer[i].Controls.Add(Pro[m]);
                         m++;
-                        if (m == Data.ProductName.Count) { break; }
+                        if (m == ProdName.Count) { break; }
                     }
-
             }
 
 
-            for (int j = 0; j < Data.Category.Count; j++) // if click the button of show products
+            for (int j = 0; j < bTN_Name.Count; j++) // if click the button of show products
             {
                 var captured_j = j;  
                 Category[j].Controls[1].Click += (s, ea) => FrmProduct[captured_j].ShowDialog();

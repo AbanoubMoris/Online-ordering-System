@@ -13,15 +13,17 @@ namespace OOs333333
         private List<string> ProductName = new List<string>();
         private List<int>    Price       = new List<int>();
         private List<int>    Quantity    = new List<int>();
+        private List<string> status = new List<string>();
 
         
 
-       public OnlineOrders(List<string> UserName, List<string> ProductName, List<int> Price, List<int> Quantity)
+       public OnlineOrders(List<string> UserName, List<string> ProductName, List<int> Price, List<int> Quantity , List<string> status)
         {
             this.UserName    = UserName  ;
             this.ProductName =ProductName;
             this.Price       =Price      ;
             this.Quantity    = Quantity  ;
+            this.status = status;
             ReadOrders();
 
         }
@@ -42,7 +44,9 @@ namespace OOs333333
                 UserName.Add(Token[0]);
                 ProductName.Add(Token[1]);
                 Price.Add(Convert.ToInt32(Token[2]));
-                Quantity.Add(Convert.ToInt32(Token[4]));
+                Quantity.Add(Convert.ToInt32(Token[3]));
+                status.Add(Token[4]);
+          
             }
 
             SR.Dispose();

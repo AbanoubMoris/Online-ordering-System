@@ -55,9 +55,9 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.Transparent;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 130);
+            this.textBox1.Location = new System.Drawing.Point(0, 125);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 27);
+            this.textBox1.Size = new System.Drawing.Size(171, 32);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "Name";
             this.textBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,6 +179,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::OOs333333.Properties.Resources._111;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 177);

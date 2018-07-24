@@ -1,5 +1,7 @@
-1,Samsung,156$,5
-ta,Samsung,156$,1
-ta,Samsung,156$,1
-ta,sAnm,156$,7
-ta,Samsung,156$,3
+Abanoub,Iphone X,1000,7,Pending
+Thomas,Tecno CX,600,1,Pending
+label1,Iphone X,1000,1,Pending
+label1,Sony,5456,1,Pending
+label1,Btates,1,1,Pending
+label1,Uber,56,1,Pending
+label1,Careem,56,1,Pending
